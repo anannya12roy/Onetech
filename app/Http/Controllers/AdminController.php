@@ -30,7 +30,7 @@ class AdminController extends Controller
             Session::put('name', $result->name);
             Session::put('id', $result->id);
                 // Toastr::success('You are Logged in', 'Welcome', ["positionClass" => "toast-top-right"]);
-                return redirect('/dashboard');
+                return redirect('/admin/dashboard');
         }
         else{
             // Toastr::error('Invalid Credentials', 'Opps!', ["positionClass" => "toast-top-right"]);
@@ -53,7 +53,7 @@ class AdminController extends Controller
 
     public function logout(){
         Session::flush();
-        return redirect('/backend-admin');
+        return redirect('/badmin');
     }
 
     public function subscribe(){

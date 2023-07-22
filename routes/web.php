@@ -45,6 +45,9 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+Route::get('/badmin', [AdminController::class, 'form']);
+Route::post('/backend-check', [AdminController::class, 'login']);
+Route::get('/logout', [AdminController::class,'logout']);
 
 Route::get('/admin/dashboard', [DashboardController::class, 'dashboard'])->name('profile.edit');
 

@@ -2,31 +2,7 @@
 @section('admin.content')
 
 <div class="table-responsive pt-3">
-  <form action="" method="get" >
-    @csrf
-    <div class="row" style="padding:15px;">
-        <div  class="col-md-3">
-            <label for="">Filter By Date</label>
-            <input type="date" name="date" value="{{date('Y-m-d')}}" class="form-control">
-        </div>
-
-        <div class="col-md-3">
-            <label for="">Delivery Status</label>
-            <select name="status" id="" class="form-control" style="height: 46px;">
-                <option value="">Select Status</option>
-                <option value="processing">Processing</option>
-                <option value="synced">Synced</option>
-                <option value="delivered">Delivered</option>
-                <option value="cancelled">Cancelled</option>
-            </select>
-        </div>
-        <div class="col-md-3">
-        <button type="submit" class="btn btn-primary " style="margin-top:22px; color:white;"> Filter </button>
-    </div>
-    </div>
-
-  </form>
-    <table class="table table-hover table-dark">
+    <table class="table table-hover">
         <thead>
             <tr>
               <th style="width: 3%;" scope="col">Order ID</th>
@@ -88,8 +64,6 @@
                 </td>
             </tr>
             @empty
-
-                <p style="color:red; text-align:center;">No orders found</p>
                 @endforelse
           </tbody>
 
