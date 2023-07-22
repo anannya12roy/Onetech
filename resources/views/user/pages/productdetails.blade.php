@@ -3,9 +3,8 @@
 @section('user.content')
 <div class="single_product">
     <div class="container">
-
         <div class="row">
-{{--  @dd($products);  --}}
+
             <!-- Images -->
             <div class="col-lg-2 order-lg-1 order-2">
                 <ul class="image_list">
@@ -16,18 +15,17 @@
             <!-- Selected Image -->
             <div class="col-lg-5 order-lg-2 order-1">
                 <div class="image_selected"><img src="images/single_4.jpg" alt=""></div>
-                    <div class="product_category">{{ $products->category }}</div>
-                    <div class="product_name">{{ $products->name }}</div>
-                    <div class="product_text"><p>{{  $products->description  }}</p></div>
-                    <div class="order_info d-flex flex-row">
-                        <form>
-                            @csrf
-                            <div class="clearfix" style="z-index: 1000
             </div>
 
             <!-- Description -->
             <div class="col-lg-5 order-3">
-                <div class="product_description">;">
+                <div class="product_description">
+                    <div class="product_category">{{ $products->category }}</div>
+                    <div class="product_name">{{ $products->name }}</div>
+                    <div class="product_text"><p>{{  $products->description  }}</p></div>
+                    <div class="order_info d-flex flex-row">
+                        <form action="#">
+                            <div class="clearfix" style="z-index: 1000;">
 
                                 <!-- Product Quantity -->
                                 <div class="product_quantity clearfix">
@@ -55,6 +53,7 @@
                                 </ul>
 
                             </div>
+
                             @if ($products->discount_price)
                             <div class="product_price">{{ $products->discount_price }}</div><del
                             class="product-old-price">&#2547;{{ $products->price }}</del>
@@ -72,7 +71,6 @@
             </div>
 
         </div>
-
     </div>
 </div>
 
