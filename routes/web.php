@@ -18,6 +18,7 @@ use App\Http\Controllers\HotdealController;
 use App\Http\Controllers\SettingController;
 use App\Http\Controllers\AllproductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\frontendController;
 
 /*
 |--------------------------------------------------------------------------
@@ -30,9 +31,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -111,3 +112,8 @@ Route::post('/delete-color/{id}', [ColorController::class, 'destroy']);
 
         //subscribe
         Route::get('/subscribe', [AdminController::class, 'subscribe']);
+
+
+
+//frontend
+Route::get('/', [frontendController::class, 'home']);
