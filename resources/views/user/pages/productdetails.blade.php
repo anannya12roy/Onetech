@@ -1,118 +1,75 @@
 @extends('user.master')
 
 @section('user.content')
-    @include('user.nav')
-    <!-- /BREADCRUMB -->
+<div class="single_product">
+    <div class="container">
+        <div class="row">
 
-    <!-- SECTION -->
-    <div class="section">
-        <!-- container -->
-        <div class="container">
-            <!-- row -->
-            <div class="row">
-                <form action="{{ url('/add_cart/' . $products->id) }}" method="post">
-                    @csrf
-                    <!-- Product main img -->
-                    <div class="col-md-5 col-md-push-2">
-                        <div id="product-main-img">
+            <!-- Images -->
+            <div class="col-lg-2 order-lg-1 order-2">
+                <ul class="image_list">
+                    <li data-image="images/single_4.jpg"><img src="images/single_4.jpg" alt=""></li>
+                    <li data-image="images/single_2.jpg"><img src="images/single_2.jpg" alt=""></li>
+                    <li data-image="images/single_3.jpg"><img src="images/single_3.jpg" alt=""></li>
+                </ul>
+            </div>
 
-                            <div class="product-preview">
-                                <img name="image" src="{{ asset('/image/' . $products->image) }}">
-                                {{-- <img src="./images/color/202305131644photo-1581362716668-90cdec6b4882.jpg" alt="">  --}}
-                            </div>
+            <!-- Selected Image -->
+            <div class="col-lg-5 order-lg-2 order-1">
+                <div class="image_selected"><img src="images/single_4.jpg" alt=""></div>
+            </div>
 
-                        </div>
-                    </div>
-                    <!-- /Product main img -->
+            <!-- Description -->
+            <div class="col-lg-5 order-3">
+                <div class="product_description">
+                    <div class="product_category">Laptops</div>
+                    <div class="product_name">MacBook Air 13</div>
+                    <div class="rating_r rating_r_4 product_rating"><i></i><i></i><i></i><i></i><i></i></div>
+                    <div class="product_text"><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas fermentum. laoreet turpis, nec sollicitudin dolor cursus at. Maecenas aliquet, dolor a faucibus efficitur, nisi tellus cursus urna, eget dictum lacus turpis.</p></div>
+                    <div class="order_info d-flex flex-row">
+                        <form action="#">
+                            <div class="clearfix" style="z-index: 1000;">
 
-                    <!-- Product thumb imgs -->
-                    <div class="col-md-2  col-md-pull-5">
-                        <div id="product-imgs">
-
-                        </div>
-                    </div>
-                    <!-- /Product thumb imgs -->
-
-                    <!-- Product details -->
-                    <div class="col-md-5">
-                        <div class="product-details">
-                            <h2 class="product-name">{{ $products->name }}</h2>
-
-                            <div>
-                                @if ($products->discount_price)
-                                    <h3 class="product-price" name="price"><b>
-                                            &#2547;{{ $products->discount_price }}</b> <del
-                                            class="product-old-price">&#2547;{{ $products->price }}</del></h3>
-                                @else
-                                    <h3 class="product-price" name="price"><b>
-                                            &#2547; {{ $products->price }}</b></h3>
-                                @endif
-                            
-
-                            </div>
-                            <ul>{!! $products->description !!}</ul>
-
-                            <div class="product-options">
-                                <label>Size:
-                                    <select class="form-control" name="size">
-                                        <option>Choose Size</option>
-                                        @foreach (Json_decode($products->size) as $sizee)
-                                            <option value="{{ $sizee }}">{{ $sizee }}</option>
-                                        @endforeach
-
-
-                                    </select>
-                                </label>
-                                <label>
-                                    <label>Color:
-                                        <select class="form-control" name="color">
-                                            <option>Choose Color</option>
-
-                                            <option value="{{ $products->color }}">{{ $products->color }}</option>
-
-                                        </select>
-                                    </label>
-                                </label>
-                            </div>
-
-                            <div class="add-to-cart">
-                                <div class="qty-label">
-                                    Qty
-                                    <div class="input-number">
-                                        <input type="number" name="quantity" value="0" required>
-                                        <span class="qty-up">+</span>
-                                        <span class="qty-down">-</span>
+                                <!-- Product Quantity -->
+                                <div class="product_quantity clearfix">
+                                    <span>Quantity: </span>
+                                    <input id="quantity_input" type="text" pattern="[0-9]*" value="1">
+                                    <div class="quantity_buttons">
+                                        <div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fas fa-chevron-up"></i></div>
+                                        <div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fas fa-chevron-down"></i></div>
                                     </div>
                                 </div>
-                                <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to carrt</button>
+
+                                <!-- Product Color -->
+                                <ul class="product_color">
+                                    <li>
+                                        <span>Color: </span>
+                                        <div class="color_mark_container"><div id="selected_color" class="color_mark"></div></div>
+                                        <div class="color_dropdown_button"><i class="fas fa-chevron-down"></i></div>
+
+                                        <ul class="color_list">
+                                            <li><div class="color_mark" style="background: #999999;"></div></li>
+                                            <li><div class="color_mark" style="background: #b19c83;"></div></li>
+                                            <li><div class="color_mark" style="background: #000000;"></div></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
                             </div>
+
+                            <div class="product_price">$2000</div>
+                            <div class="button_container">
+                                <button type="button" class="button cart_button">Add to Cart</button>
+                                <div class="product_fav"><i class="fas fa-heart"></i></div>
+                            </div>
+                            
                         </form>
-                            <ul class="product-btns">
-                            <form action="{{ url('/wishlist/'.$products->id) }}" method="post">
-                                    @csrf
-                                <li><button><i class="fa fa-heart-o"></i> add to wishlist</button></li>
-
-                                {{-- <li><a href="#"><i cnlass="fa fa-exchange"></i> add to compare</a></li>  --}}
-                            </form>
-                            </ul>
-
-                            <ul class="product-links">
-                                <li>Category:</li>
-                                <li><a href="#"><b>{{ $products->category }}</b></a></b></li>
-                            </ul>
-
-
-
-                        </div>
                     </div>
-                    <!-- /Product details -->
-                {{-- </form> --}}
+                </div>
             </div>
-            <!-- /row -->
-        </div>
-        <!-- /container -->
-    </div>
-    <!-- /SECTION -->
 
+        </div>
+    </div>
+</div>
 
 @endsection
