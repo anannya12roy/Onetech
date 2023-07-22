@@ -116,4 +116,4 @@ Route::post('/delete-color/{id}', [ColorController::class, 'destroy']);
 
 
 //frontend
-Route::get('/', [frontendController::class, 'home']);
+Route::get('/', [UserController::class, 'home']);
