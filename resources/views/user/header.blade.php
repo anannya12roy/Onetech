@@ -9,30 +9,56 @@
                     <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/phone.png" alt=""></div>+38 068 005 3570</div>
                     <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
                     <div class="top_bar_content ml-auto">
+                      
                         <div class="top_bar_menu">
                             <ul class="standard_dropdown top_bar_dropdown">
-                                <li>
-                                    <a href="#">English<i class="fas fa-chevron-down"></i></a>
-                                    <ul>
-                                        <li><a href="#">Italian</a></li>
-                                        <li><a href="#">Spanish</a></li>
-                                        <li><a href="#">Japanese</a></li>
-                                    </ul>
-                                </li>
-                                <li>
-                                    <a href="#">$ US dollar<i class="fas fa-chevron-down"></i></a>
-                                    <ul>
-                                        <li><a href="#">EUR Euro</a></li>
-                                        <li><a href="#">GBP British Pound</a></li>
-                                        <li><a href="#">JPY Japanese Yen</a></li>
-                                    </ul>
-                                </li>
+                                {{-- <li>
+                                    <a href="#">Profile<i class="fas fa-chevron-down"></i></a>
+                                    
+                                </li> --}}
+                                
                             </ul>
                         </div>
                         <div class="top_bar_user">
-                            <div class="user_icon"><img src="images/user.svg" alt=""></div>
-                            <div><a href="#">Register</a></div>
-                            <div><a href="#">Sign in</a></div>
+                            
+                            @if (Route::has('login'))
+                            @auth
+                            <form method="POST" action="{{ route('logout') }}">
+                                @csrf
+                                
+                            <div><div class="user_icon"><img src="images/user.svg" alt=""></div><a href="#">Profile</a></div>
+                            
+                            <div><a href="route('logout')"
+                                onclick="event.preventDefault();
+                            this.closest('form').submit();">Logout</a></div>
+                        </form>
+                        @else
+                            
+                            <div> <div class="user_icon"><img src="images/user.svg" alt=""></div><a href="{{ route('register') }}">Register</a></div>
+                           
+                            <div> <div class="user_icon"><img src="images/user.svg" alt=""></div><a href="{{ route('login') }}">Sign in</a></div>
+                            @endauth
+                            @endif
+                            {{-- @if (Route::has('login'))
+                            @auth
+                                <form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+                                    <li><a href="{{url('profile')}}"><i
+                                                class="fa fa-user"></i>Profile</a></li>
+                                    <li><a href="route('logout')"
+                                            onclick="event.preventDefault();
+                                        this.closest('form').submit();"><i
+                                                class="fa fa-user-o"></i> Logout</a></li>
+        
+    
+                                </form>
+                            @else
+                                <li><a href="{{ route('login') }}"><i class="fa fa-user-o"></i> Login</a></li>
+                                <li><a href="{{ route('register') }}"><i class="fa fa-user-o"></i> Registration</a></li>
+        
+                            @endauth
+                        @endif --}}
+                            
                         </div>
                     </div>
                 </div>

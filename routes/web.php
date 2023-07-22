@@ -116,7 +116,9 @@ Route::post('/delete-color/{id}', [ColorController::class, 'destroy']);
 
 
 //frontend
-Route::get('/', [UserController::class, 'home']);
+
+Route::get('/', [UserController::class, 'frontpage']);
+Route::get('/home', [UserController::class, 'home']);
 
 Route::get('/productbycat/{name}', [AllproductController::class, 'productbycat'])->name('hello');
 Route::post('/add_cart/{id}', [\App\Http\Controllers\WebControllers\CartController::class, 'add_cart']);
