@@ -34,7 +34,7 @@ class AdminController extends Controller
         }
         else{
             // Toastr::error('Invalid Credentials', 'Opps!', ["positionClass" => "toast-top-right"]);
-            return redirect('/backend-admin');
+            return redirect('/badmin');
         }
     }
 
