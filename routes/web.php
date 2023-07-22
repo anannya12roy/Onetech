@@ -117,3 +117,9 @@ Route::post('/delete-color/{id}', [ColorController::class, 'destroy']);
 
 //frontend
 Route::get('/', [UserController::class, 'home']);
+
+Route::get('/productbycat/{name}', [AllproductController::class, 'productbycat'])->name('hello');
+Route::post('/add_cart/{id}', [\App\Http\Controllers\WebControllers\CartController::class, 'add_cart']);
+Route::get('/hotdeal_shop/{name}', [\App\Http\Controllers\UserController::class, 'hotdeal']);
+Route::get('/product-details/{id}', [\App\Http\Controllers\WebControllers\ProductdetailsController::class, 'viewdetails']);
+Route::get('/delete_cart/{id}', [\App\Http\Controllers\WebControllers\CartController::class, 'delete_cart']);
