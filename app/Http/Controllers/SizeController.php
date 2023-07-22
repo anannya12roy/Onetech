@@ -14,9 +14,9 @@ class SizeController extends Controller
         return view('admin.size.create');
     }
 
-    public function store(SizeRequest $request){
-        $request->validated();
-        $sizes = explode(',',$request->name); 
+    public function store(Request $request){
+    
+        $sizes = explode(',',$request->name);
         $size= Size::create([
             'name' => json_encode($sizes),
         ]);
@@ -32,15 +32,15 @@ class SizeController extends Controller
 
     public function edit($id){
 
-        
+
         $size = Size::find($id);
         return view('admin.size.edit',compact('size'));
     }
 
     public function update(Request $request, $id){
-       
-        
-        $sizes = explode(',',$request->name); 
+
+
+        $sizes = explode(',',$request->name);
         $size= Size::where('id',$id)->update([
                 'name' =>  json_encode($sizes),
             ]);

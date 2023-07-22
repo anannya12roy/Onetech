@@ -4,8 +4,8 @@
 <div class="col-lg-12 grid-margin stretch-card">
     <div class="card">
       <div class="card-body">
-        <h4 class="card-title" style="color:rgb(0, 138, 202);font-size:25px; text-align:center;">All Category</h4>
-        
+        <h4 class="card-title" style="color:rgb(0, 138, 202);font-size:25px; text-align:center;">All subscribers</h4>
+
         <div class="table-responsive">
           <table class="table table-striped">
             <thead>
@@ -13,7 +13,7 @@
                 <th>ID</th>
                 <th>Subscriber Email</th>
                 <th>Action</th>
-                
+
               </tr>
             </thead>
             <tbody>
@@ -27,7 +27,7 @@
                     </td>
                     <td>
                         <div class="d-flex">
-                            <div class="p-2">   
+                            <div class="p-2">
                                 <form action="{{url('/delete_subscribe/'.$subscribe->id)}}" method="post">
                                     @csrf
                                     <button class=" btn btn-danger btn-sm">  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
@@ -36,9 +36,9 @@
                                       </svg></button>
                                 </form>
                             </div>
-                        </div>   
+                        </div>
                     </td>
-               
+
               </tr>
             @endforeach
             </tbody>

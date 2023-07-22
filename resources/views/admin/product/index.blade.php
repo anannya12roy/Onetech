@@ -6,22 +6,18 @@
                 <h4 class="card-title" style="color:rgb(0, 138, 202);font-size:25px; text-align:center;">All Products</h4>
 
                 <div class="table-responsive">
-                    <table class="table table-striped" id="example1">
+                    <table class="table table-striped">
                         <thead>
                             <tr>
-
-                                <th style="width: 5%;">ID</th>
-                                <th style="width: 10%;">Product name</th>
-                                <th style="width: 10%;">Category</th>
-                                <th style="width: 10%;">Size</th>
-                                <th style="width: 10%;">Color</th>
-                                <th style="width: 10%;">Price</th>
-                                <th style="width: 10%;">Discount Price</th>
-                                <th style="width: 25%;">Description</th>
-                                <th style="width: 15%;">Image</th>
-                                <th style="width: 5%;">Status</th>
-                                <th style="width: 5%;">Hot deal</th>
-                                <th style="width: 10%;">Action</th>
+                                <th>ID</th>
+                                <th>Product name</th>
+                              
+                                <th>Price</th>
+                                <th>Discount Price</th>
+                                <th>Image</th>
+                                <th>Status</th>
+                                <th>Hot deal</th>
+                                <th>Action</th>
 
 
                             </tr>
@@ -38,29 +34,16 @@
                                     <td>
                                         {{ $product->name }}
                                     </td>
-                                    <td>
-                                        {{ $product->category }}
-                                    </td>
-                                    <td>
-                                        {{ $product->size }}
-                                    </td>
-                                    <td>
-                                        {{ $product->color }}
-                                    </td>
+
+
                                     <td> {{ $product->price }}</td>
                                     <td> {{ $product->discount_price }}</td>
-                                    <td>{!! $product->description !!}</td>
                                     <td>
                                         @foreach ($product->image as $images)
                                             <img src="{{ asset('/image/' . $images) }}" style="width: 80px;height:80px ;">
                                         @endforeach
                                     </td>
                                     <td class="center">
-                                        {{-- @if ($product->status == 1)
-                          <span class="btn btn-success">Active</span>
-                        @else
-                        <span class="btn btn-danger">Deactive</span>
-                        @endif --}}
 
                                         <label class="switch">
                                             <input class="switch_change" name="status" id="{{ $product->id }}"
@@ -81,13 +64,13 @@
                                         <div class="d-flex">
                                             <div class="p-2">
                                                 <a href="{{ url('/edit-product/' . $product->id) }}"
-                                                    class=" btn btn-info btn-sm"> <i class="las la-edit"></i></a>
+                                                    class=" btn btn-info btn-sm"> <i class="las la-edit"></i>Edit</a>
                                             </div>
                                             <div class="p-2">
                                                 <form action="{{ url('/delete-product/' . $product->id) }}" method="post">
                                                     @csrf
                                                     <button class=" btn btn-danger btn-sm"> <i class="las la-trash-alt"
-                                                            style="color:rgb(243, 243, 243);"></i></button>
+                                                            style="color:rgb(243, 243, 243);"></i>Delete</button>
                                                 </form>
                                             </div>
                                         </div>
@@ -95,6 +78,7 @@
 
                                 </tr>
                             @endforeach
+
 
                         </tbody>
 

@@ -15,10 +15,6 @@
             <input type="text" class="form-control" name="name"  value="{{$category->name}}" >
 
           </div>
-          <div class="form-group">
-            <label><b>Image :</b></label>
-            <input name="image" type="file" class="form-control file-upload-info">
-        </div>
 
           <div class="form-group">
             <label for="exampleTextarea1">Description</label>

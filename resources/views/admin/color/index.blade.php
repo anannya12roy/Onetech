@@ -35,13 +35,13 @@
                                         <div class="d-flex">
                                             <div class="p-2">
                                                 <a href="{{ url('/edit-color/' . $color->id) }}"
-                                                    class=" btn btn-info btn-sm"> <i class="las la-edit"></i></a>
+                                                    class=" btn btn-info btn-sm"> <i class="las la-edit"></i>Edit</a>
                                             </div>
                                             <div class="p-2">
                                                 <form action="{{ url('/delete-color/' . $color->id) }}" method="post">
                                                     @csrf
                                                     <button class=" btn btn-danger btn-sm"> <i class="las la-trash-alt"
-                                                            style="color:rgb(243, 243, 243);"></i></button>
+                                                            style="color:rgb(243, 243, 243);"></i>Delete</button>
                                                 </form>
                                             </div>
                                         </div>

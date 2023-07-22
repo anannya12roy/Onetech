@@ -38,12 +38,6 @@
                     {{$category->name}}
                 </td>
                 <td>
-                  <div class="progress">
-                    <img width="100px" height="200px"
-                            src="{{ asset('images/category' . '/' . $category->image) }}">
-                  </div>
-                </td>
-                <td>
                     {{$category->description}}
                 </td>
                 <td>

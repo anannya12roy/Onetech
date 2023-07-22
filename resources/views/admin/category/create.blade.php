@@ -3,26 +3,18 @@
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title">Basic form elements</h4>
+                <h4 class="card-title">Create Category</h4>
                 <p class="card-description">
-                    Basic form elements
+                    Category
                 </p>
                 <form action="{{ url('store-category') }}" method="POST" class="forms-sample" enctype="multipart/form-data">
                     @csrf
                     <div class="form-group">
-                        <label for="exampleInputName1">Name</label>
+                        <label for="exampleInputName1">Category Name</label>
                         <input type="text" class="form-control" id="exampleInputName1" name="name" placeholder="Name">
                         @error('name')
                             <div class="alert alert-danger">{{ $message }}</div>
                         @enderror
-                    </div>
-                    <div class="form-group">
-                        <label><b>Image :</b></label>
-                        <input name="image" type="file" class="form-control file-upload-info">
-                        @error('file')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-
                     </div>
                     <div class="form-group">
                         <label for="exampleInputCity1">Description</label>

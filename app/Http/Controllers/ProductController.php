@@ -21,8 +21,8 @@ class ProductController extends Controller
         return view('admin.product.create',compact('categories','sizes', 'colors'));
     }
 
-    public function store(ProductRequest $request){
-        $request->validated();
+    public function store(Request $request){
+      
         $product = new Product();
         $product->name = $request->name;
         $product->category = $request->category;
