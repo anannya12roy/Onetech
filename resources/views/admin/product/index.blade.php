@@ -44,22 +44,18 @@
                                     </td>
                                     <td class="center">
 
-                                    @if($product->status==1)
-                                        <strong
-                                            class="badge badge-success">Active</strong>
-                                    @else
-                                        <strong
-                                            class="badge badge-danger">InActive</strong>
-                                    @endif
+                                        @if ($product->status == 1)
+                                            <strong class="badge badge-success">Active</strong>
+                                        @else
+                                            <strong class="badge badge-danger">InActive</strong>
+                                        @endif
                                     </td>
                                     <td>
-                                        @if($product->hot_deal==1)
-                                        <strong
-                                            class="badge badge-success">Active</strong>
-                                    @else
-                                        <strong
-                                            class="badge badge-danger">InActive</strong>
-                                    @endif
+                                        @if ($product->hot_deal == 1)
+                                            <strong class="badge badge-success">Active</strong>
+                                        @else
+                                            <strong class="badge badge-danger">InActive</strong>
+                                        @endif
                                     </td>
                                     <td>
                                         <div class="d-flex">
@@ -90,57 +86,3 @@
         </div>
     </div>
 @endsection
-@push('js')
-    <script>
-        $(document).ready(function() {
-            $("#example").DataTable()
-        });
-        $('.switch_change').on('change', function(e) {
-            e.preventDefault();
-            var status = $(this).prop('checked') == true ? 1 : 0;
-            var id = $(this).attr('id');
-
-            $.ajax({
-
-                url: '{{ url('/tog-stts') }}',
-                type: "POST",
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    status: status,
-                    id: id
-                },
-
-                success: function(data) {
-
-                    toastr.success(data.message);
-                }
-            });
-        });
-    </script>
-    <script>
-        $(document).ready(function() {
-            $("#example").DataTable()
-        });
-        $('.deal').on('change', function(e) {
-            e.preventDefault();
-            var deal = $(this).prop('checked') == true ? 1 : 0;
-            var id = $(this).attr('id');
-
-            $.ajax({
-
-                url: '{{ url('/tog-deals') }}',
-                type: "POST",
-                data: {
-                    _token: "{{ csrf_token() }}",
-                    hotdeals: deal,
-                    id: id
-                },
-
-                success: function(data) {
-
-                    toastr.success(data.message);
-                }
-            });
-        });
-    </script>
-@endpush
