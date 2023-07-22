@@ -83,6 +83,23 @@
             @enderror
 
           </div>
+          <div class="form-group">
+            <label>Status</label>
+
+            <select class="form-control" name="status">
+                <option value="1" {{$product->status=='1' ? 'selected' : ''}}>Active</option>
+                <option value="0" {{$product->status=='0' ? 'selected' : ''}}>Inactive</option>
+            </select>
+
+        </div>
+        <div class="form-group">
+            <label>Hot deal</label>
+            <select class="form-control" name="hot_deal">
+                <option value="1" {{$product->hot_deal=='1' ? 'selected' : ''}}>Active</option>
+                <option value="0" {{$product->hot_deal=='0' ? 'selected' : ''}}>Inactive</option>
+            </select>
+
+        </div>
 
           <button type="submit" class="btn btn-primary me-2">Submit</button>
 

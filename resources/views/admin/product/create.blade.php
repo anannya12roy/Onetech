@@ -62,14 +62,6 @@
 
                     </div>
 
-                    {{-- <div class="form-group">
-                        <label for="">Description</label>
-                        <textarea class="form-control" name="description" id="exampleTextarea1" rows="4"></textarea>
-                        @error('description')
-                            <div class="alert alert-danger">{{ $message }}</div>
-                        @enderror
-                    </div> --}}
-
                     <div class="form-group">
                         <label for="">Description</label>
                         <textarea id="editor" type="text" class="form-control" name="description"  placeholder="Write The Description"></textarea>
@@ -83,6 +75,25 @@
                         @enderror
 
                     </div>
+                    <div class="form-group">
+                        <label>Status</label>
+
+                        <select class="form-control" name="status">
+                            <option value="1">Active</option>
+                            <option value="0">Inactive</option>
+                        </select>
+
+                    </div>
+                    <div class="form-group">
+                        <label>Status</label>
+
+                        <select class="form-control" name="hot_deal">
+                            <option value="1">Active</option>
+                            <option value="0">Inactive</option>
+                        </select>
+
+                    </div>
+
 
 
                     <button type="submit" class="btn btn-primary me-2">Submit</button>

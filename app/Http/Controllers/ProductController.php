@@ -22,7 +22,7 @@ class ProductController extends Controller
     }
 
     public function store(Request $request){
-      
+
         $product = new Product();
         $product->name = $request->name;
         $product->category = $request->category;
@@ -31,6 +31,8 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->discount_price= $request->discountprice;
         $product->description = $request->description;
+        $product->status = $request->status;
+        $product->hot_deal = $request->hot_deal;
 
         $images = array();
         if($files =$request->file('file')){
@@ -119,6 +121,8 @@ class ProductController extends Controller
         $product->price = $request->price;
         $product->discount_price= $request->discountprice;
         $product->description = $request->description;
+        $product->status = $request->status;
+        $product->hot_deal = $request->hot_deal;
 
         $images = array();
         if($files =$request->file('file')){

@@ -11,7 +11,6 @@
                             <tr>
                                 <th>ID</th>
                                 <th>Product name</th>
-                              
                                 <th>Price</th>
                                 <th>Discount Price</th>
                                 <th>Image</th>
@@ -45,20 +44,22 @@
                                     </td>
                                     <td class="center">
 
-                                        <label class="switch">
-                                            <input class="switch_change" name="status" id="{{ $product->id }}"
-                                                value="{{ $product->status }}" data-onstyle="info" type="checkbox"
-                                                @php if ($product->status == 1) echo "checked"; @endphp>
-                                            <span class="slider round"></span>
-                                        </label>
+                                    @if($product->status==1)
+                                        <strong
+                                            class="badge badge-success">Active</strong>
+                                    @else
+                                        <strong
+                                            class="badge badge-danger">InActive</strong>
+                                    @endif
                                     </td>
                                     <td>
-                                        <label class="switch">
-                                            <input class="deal" name="hotdeals" id="{{ $product->id }}"
-                                                value="{{ $product->hot_deal }}" data-onstyle="info" type="checkbox"
-                                                @php if ($product->hot_deal == 1) echo "checked"; @endphp>
-                                            <span class="slider round"></span>
-                                        </label>
+                                        @if($product->hot_deal==1)
+                                        <strong
+                                            class="badge badge-success">Active</strong>
+                                    @else
+                                        <strong
+                                            class="badge badge-danger">InActive</strong>
+                                    @endif
                                     </td>
                                     <td>
                                         <div class="d-flex">
