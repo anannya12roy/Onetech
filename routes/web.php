@@ -125,3 +125,5 @@ Route::post('/add_cart/{id}', [\App\Http\Controllers\WebControllers\CartControll
 Route::get('/hotdeal_shop/{name}', [\App\Http\Controllers\UserController::class, 'hotdeal']);
 Route::get('/product-details/{id}', [\App\Http\Controllers\WebControllers\ProductdetailsController::class, 'viewdetails']);
 Route::get('/delete_cart/{id}', [\App\Http\Controllers\WebControllers\CartController::class, 'delete_cart']);
+Route::post('/subscribe-us', [SubscribeController::class, 'subscribe'])->name('subscribe.us');
+Route::post('/check-subscribe-mail', [SubscribeController::class, 'checkMail'])->name('subscribe.check');

@@ -22,7 +22,7 @@ $(document).ready(function()
 {
 	"use strict";
 
-	/* 
+	/*
 
 	1. Vars and Inits
 
@@ -47,7 +47,7 @@ $(document).ready(function()
 		setHeader();
 	});
 
-	/* 
+	/*
 
 	2. Set Header
 
@@ -78,7 +78,7 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
+	/*
 
 	3. Init Custom Dropdown
 
@@ -143,7 +143,7 @@ $(document).ready(function()
 		});
 	}
 
-	/* 
+	/*
 
 	4. Init Page Menu
 
@@ -219,7 +219,7 @@ $(document).ready(function()
 		menuActive = false;
 	}
 
-	/* 
+	/*
 
 	5. Init Recently Viewed Slider
 
@@ -269,7 +269,7 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
+	/*
 
 	6. Init Brands Slider
 
@@ -313,7 +313,7 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
+	/*
 
 	7. Init Quantity
 
@@ -350,7 +350,7 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
+	/*
 
 	8. Init Color
 
@@ -374,7 +374,7 @@ $(document).ready(function()
 		}
 	}
 
-	/* 
+	/*
 
 	9. Init Favorites
 
@@ -390,7 +390,7 @@ $(document).ready(function()
 		});
 	}
 
-	/* 
+	/*
 
 	10. Init Image
 
@@ -411,4 +411,41 @@ $(document).ready(function()
 			});
 		});
 	}
+    $(document).ready(function () {
+        $('#subscribe_submit').click(function (e) {
+            e.preventDefault();
+            var email = $('#email_subscribe').val();
+            if (email == '') {
+                toastr.error('Please Enter Your Email');
+            } else {
+                $.ajax({
+                    url: "{{ url('/subscribe-us') }}",
+                    type: "POST",
+                    data: {
+                        "email": email,
+                        "_token": "{{csrf_token()}}"
+                    },
+                    success: function ({message,status:code}, status) {
+                        if (status === 'success') {
+                            if(code==202){
+                                toastr.error('You Have Already Subscribed');
+                                return false;
+                            }
+                            $.ajax({
+                                url: "{{ url('/check-subscribe-mail') }}",
+                                type: "POST",
+                                data: {
+                                    "email": email,
+                                    "_token": "{{csrf_token()}}"
+                                },
+                                success: function (data) {
+                                    toastr.success('You Are Subscribed');
+                                },
+                            });
+                        }
+                    },
+                });
+            }
+        });
+    })
 });

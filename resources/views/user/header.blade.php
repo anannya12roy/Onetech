@@ -6,36 +6,36 @@
         <div class="container">
             <div class="row">
                 <div class="col d-flex flex-row">
-                    <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/phone.png" alt=""></div>+38 068 005 3570</div>
-                    <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
+                    <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/phone.png" alt=""></div>{{ $setting['phn'] }}</div>
+                    <div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/mail.png" alt=""></div><a href="">{{ $setting['email'] }}</a></div>
                     <div class="top_bar_content ml-auto">
-                      
+
                         <div class="top_bar_menu">
                             <ul class="standard_dropdown top_bar_dropdown">
                                 {{-- <li>
                                     <a href="#">Profile<i class="fas fa-chevron-down"></i></a>
-                                    
+
                                 </li> --}}
-                                
+
                             </ul>
                         </div>
                         <div class="top_bar_user">
-                            
+
                             @if (Route::has('login'))
                             @auth
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
-                                
+
                             <div><div class="user_icon"><img src="images/user.svg" alt=""></div><a href="#">Profile</a></div>
-                            
+
                             <div><a href="route('logout')"
                                 onclick="event.preventDefault();
                             this.closest('form').submit();">Logout</a></div>
                         </form>
                         @else
-                            
+
                             <div> <div class="user_icon"><img src="images/user.svg" alt=""></div><a href="{{ route('register') }}">Register</a></div>
-                           
+
                             <div> <div class="user_icon"><img src="images/user.svg" alt=""></div><a href="{{ route('login') }}">Sign in</a></div>
                             @endauth
                             @endif
@@ -49,16 +49,16 @@
                                             onclick="event.preventDefault();
                                         this.closest('form').submit();"><i
                                                 class="fa fa-user-o"></i> Logout</a></li>
-        
-    
+
+
                                 </form>
                             @else
                                 <li><a href="{{ route('login') }}"><i class="fa fa-user-o"></i> Login</a></li>
                                 <li><a href="{{ route('register') }}"><i class="fa fa-user-o"></i> Registration</a></li>
-        
+
                             @endauth
                         @endif --}}
-                            
+
                         </div>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                             <div class="wishlist_icon"><img src="{{ asset('images/heart.png') }}" alt=""></div>
                             <div class="wishlist_content">
                                 <div class="wishlist_text"><a href="#">Wishlist</a></div>
-                                <div class="wishlist_count">115</div>
+                                <div class="wishlist_count">{{  $wishlists  }}</div>
                             </div>
                         </div>
 
@@ -123,11 +123,20 @@
                             <div class="cart_container d-flex flex-row align-items-center justify-content-end">
                                 <div class="cart_icon">
                                     <img src="{{ asset('images/cart.png') }}" alt="">
-                                    <div class="cart_count"><span>10</span></div>
+                                    <?php
+                                            $totalitem = 0;
+                                            ?>
+                                        @foreach ($carts as $cart)
+                                                <?php
+                                                $totalitem =$totalitem +  $cart->quantity;
+                                                ?>
+                                        @endforeach
+                                    <div class="cart_count"><span>{{$totalitem}}</span></div>
                                 </div>
                                 <div class="cart_content">
                                     <div class="cart_text"><a href="#">Cart</a></div>
-                                    <div class="cart_price">$85</div>
+
+                                    <div class="cart_price">$10</div>
                                 </div>
                             </div>
                         </div>
