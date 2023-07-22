@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\SizeController;
 use App\Http\Controllers\ColorController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\WebControllers\PageController as WPageController;
