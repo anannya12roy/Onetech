@@ -143,3 +143,9 @@ Route::get('/profile', [\App\Http\Controllers\WebControllers\ProfileController::
     Route::get('/all-orders', [\App\Http\Controllers\WebControllers\ProfileController::class, 'orders']);
     Route::get('/view-cart', [CartController::class, 'view_cart']);
 
+    Route::get('/shipping-address', [ShippingController::class, 'form']);
+    Route::post('/shipping-store', [ShippingController::class, 'ship_store']);
+
+
+    Route::get('/checkout', [OrderController::class, 'user_all_order']);
+    Route::get('/cod-order', [OrderController::class, 'cod_order']);
