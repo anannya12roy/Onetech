@@ -20,52 +20,70 @@
             <!-- Description -->
             <div class="col-lg-5 order-3">
                 <div class="product_description">
-                    <div class="product_category">{{ $products->category }}</div>
-                    <div class="product_name">{{ $products->name }}</div>
-                    <div class="product_text"><p>{{  $products->description  }}</p></div>
+{{--                    <div class="product_category">{{ $products->category }}</div>--}}
+{{--                    <div class="product_name">{{ $products->name }}</div>--}}
+{{--                    <div class="product_text"><p>{!! $products->description !!} </p></div>--}}
                     <div class="order_info d-flex flex-row">
-                        <form action="#">
+
                             <div class="clearfix" style="z-index: 1000;">
+                                <form action="{{ url('/add_cart/' . $products->id) }}" method="post">
+                                    @csrf
+                                <input class="product_name" type="hidden" name="image" value="{{ asset('/image/' . $products->image) }}"></input>
+                                <div class="product_category" name="category">{{ $products->category }}</div>
+                                <div class="product_name" name="name">{{ $products->name }}</div>
+                                <input class="product_name" type="hidden" name="name" value="{{ $products->name }}"></input>
+                                <div class="product_text"><p>{!! $products->description !!} </p></div>
 
-                                <!-- Product Quantity -->
-                                <div class="product_quantity clearfix">
-                                    <span>Quantity: </span>
-                                    <input id="quantity_input" type="text" pattern="[0-9]*" value="1">
-                                    <div class="quantity_buttons">
-                                        <div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fas fa-chevron-up"></i></div>
-                                        <div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fas fa-chevron-down"></i></div>
-                                    </div>
-                                </div>
+                                    @if ($products->discount_price)
+                                        <div class="product_text" name="discount_price"><p><b>Price:</b> {{ $products->discount_price }}</p></div>
+                                        <del
+                                            class="product-old-price">&#2547;{{ $products->price }}</del>
+                                    @else
+                                        <div class="product_text" name="price"><p><b>Price : </b>{{ $products->price }}</p></div>
+                                    @endif
 
-                                <!-- Product Color -->
-                                <ul class="product_color">
-                                    <li>
-                                        <span>Color: </span>
-                                        <div class="color_mark_container"><div id="selected_color" class="color_mark"></div></div>
-                                        <div class="color_dropdown_button"><i class="fas fa-chevron-down"></i></div>
+                                    <label>Size:
+                                        <select class="form-control" name="size">
+                                            <option>Choose Size</option>
+                                            @foreach (Json_decode($products->size) as $sizee)
+                                                <option value="{{ $sizee }}">{{ $sizee }}</option>
+                                            @endforeach
 
-                                        <ul class="color_list">
-                                            <li><div class="color_mark" style="background: #999999;"></div></li>
-                                            <li><div class="color_mark" style="background: #b19c83;"></div></li>
-                                            <li><div class="color_mark" style="background: #000000;"></div></li>
-                                        </ul>
-                                    </li>
-                                </ul>
+
+                                        </select>
+                                    </label>
+                                    <label>
+                                        <label>Color:
+                                            <select class="form-control" name="color">
+                                                <option>Choose Color</option>
+
+                                                <option value="{{ $products->color }}">{{ $products->color }}</option>
+
+                                            </select>
+                                        </label>
+                                    </label>
 
                             </div>
-
-                            @if ($products->discount_price)
-                            <div class="product_price">{{ $products->discount_price }}</div><del
-                            class="product-old-price">&#2547;{{ $products->price }}</del>
-                            @else
-                            <div class="product_price">{{ $products->price }}</div>
-                            @endif
                             <div class="button_container">
-                                <button type="button" class="button cart_button">Add to Cart</button>
-                                <button type="button" class="button cart_button">Add to Wishlist</button>
+                                <div class="add-to-cart">
+                                    <div class="product_quantity clearfix">
+                                        <span>Quantity: </span>
+                                        <input id="quantity_input" type="text" pattern="[0-9]*"  name="quantity" value="1">
+                                        <div class="quantity_buttons">
+                                            <div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fas fa-chevron-up"></i></div>
+                                            <div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fas fa-chevron-down"></i></div>
+                                        </div>
+                                    </div>
+                                </div><br>
+                                <button type="submit" class="button cart_button">Add to Cart</button></form><br><br>
+                                <form action="{{ url('/wishlist/'.$products->id) }}" method="post">
+                                    @csrf
+                                    <button type="submit" class="button cart_button">Add to Wishlist</button>
+                                </form>
+
                             </div>
 
-                        </form>
+
                     </div>
                 </div>
             </div>

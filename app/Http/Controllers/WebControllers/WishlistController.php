@@ -17,6 +17,7 @@ class WishlistController extends Controller
 {
     public function add_wishlist($id)
     {
+
         if(Auth::id()){
             $user = Auth::user();
             $product = Product::find($id);

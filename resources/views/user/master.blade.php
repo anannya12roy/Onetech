@@ -49,6 +49,46 @@
     <script src="{{ asset('plugins/slick-1.8.0/slick.js') }}"></script>
     <script src="{{ asset('plugins/easing/easing.js') }}"></script>
     <script src="{{ asset('js/custom.js') }}"></script>
+    <script>
+
+        $(document).ready(function () {
+            $('#subscribe_submit').click(function (e) {
+                e.preventDefault();
+                var email = $('#email_subscribe').val();
+                if (email == '') {
+                    toastr.error('Please Enter Your Email');
+                } else {
+                    $.ajax({
+                        url: "{{ url('/subscribe-us') }}",
+                        type: "POST",
+                        data: {
+                            "email": email,
+                            "_token": "{{csrf_token()}}"
+                        },
+                        success: function ({message, status: code}, status) {
+                            if (status === 'success') {
+                                if (code == 202) {
+                                    toastr.error('You Have Already Subscribed');
+                                    return false;
+                                }
+                                $.ajax({
+                                    url: "{{ url('/check-subscribe-mail') }}",
+                                    type: "POST",
+                                    data: {
+                                        "email": email,
+                                        "_token": "{{csrf_token()}}"
+                                    },
+                                    success: function (data) {
+                                        toastr.success('You Are Subscribed');
+                                    },
+                                });
+                            }
+                        },
+                    });
+                }
+            });
+        })
+    </script>
 </body>
 
 </html>
