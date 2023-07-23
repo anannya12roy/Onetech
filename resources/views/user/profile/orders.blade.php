@@ -4,7 +4,7 @@
 
 <div class="container">
 
-<h4 style="margin-top: 10px;">{{Auth::user()->name}} Your cart Item  </h4>
+<h4 style="margin-top: 10px;">{{Auth::user()->name}} Your orders  </h4>
     <table style="margin-top: 5%;" class="table table-bordered">
         <thead>
           <tr>

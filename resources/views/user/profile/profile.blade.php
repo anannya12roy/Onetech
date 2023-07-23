@@ -31,29 +31,19 @@
 						<div class="top_bar_contact_item"><div class="top_bar_icon"><img src="images/mail.png" alt=""></div><a href="mailto:fastsales@gmail.com">fastsales@gmail.com</a></div>
 						<div class="top_bar_content ml-auto">
 							<div class="top_bar_menu">
-								<ul class="standard_dropdown top_bar_dropdown">
-									<li>
-										<a href="#">English<i class="fas fa-chevron-down"></i></a>
-										<ul>
-											<li><a href="#">Italian</a></li>
-											<li><a href="#">Spanish</a></li>
-											<li><a href="#">Japanese</a></li>
-										</ul>
-									</li>
-									<li>
-										<a href="#">$ US dollar<i class="fas fa-chevron-down"></i></a>
-										<ul>
-											<li><a href="#">EUR Euro</a></li>
-											<li><a href="#">GBP British Pound</a></li>
-											<li><a href="#">JPY Japanese Yen</a></li>
-										</ul>
-									</li>
-								</ul>
+
 							</div>
 							<div class="top_bar_user">
-								<div class="user_icon"><img src="images/user.svg" alt=""></div>
-								<div><a href="#">Register</a></div>
-								<div><a href="#">Sign in</a></div>
+
+								<form method="POST" action="{{ route('logout') }}">
+                                    @csrf
+
+                                <div><div class="user_icon"><img src="images/user.svg" alt=""></div><a href="{{url('/profile')}}">Profile</a></div>
+
+                                <div><a href="route('logout')"
+                                    onclick="event.preventDefault();
+                                this.closest('form').submit();">Logout</a></div>
+                            </form>
 							</div>
 						</div>
 					</div>
@@ -108,7 +98,7 @@
 							<div class="wishlist d-flex flex-row align-items-center justify-content-end">
 								<div class="wishlist_icon"><img src="images/heart.png" alt=""></div>
 								<div class="wishlist_content">
-									<div class="wishlist_text"><a href="#">Wishlist</a></div>
+									<div class="wishlist_text"><a href="{{url('/all-wishlist')}}">Wishlist</a></div>
 									<div class="wishlist_count">115</div>
 								</div>
 							</div>
@@ -121,7 +111,7 @@
 										<div class="cart_count"><span>10</span></div>
 									</div>
 									<div class="cart_content">
-										<div class="cart_text"><a href="#">Cart</a></div>
+										<div class="cart_text"><a href="{{url('/view-cart')}}">Cart</a></div>
 										<div class="cart_price">$85</div>
 									</div>
 								</div>
@@ -180,7 +170,7 @@
 							<div class="contact_info_content">
 
 
-								<a href=""><div class="contact_info_title">Cart</div></a>
+								<a href="{{url('/view-cart')}}"><div class="contact_info_title">Cart</div></a>
 
 							</div>
 						</div>
@@ -190,7 +180,7 @@
 							<div class="contact_info_image"><img src="images/heart.png" alt=""></div>
 							<div class="contact_info_content">
                                 <div class=cart_icon"></div>
-								<a href=""><div class="contact_info_title">Wishlist</div></a>
+								<a href="{{url('/all-wishlist')}}"><div class="contact_info_title">Wishlist</div></a>
 
 							</div>
 						</div>
@@ -199,7 +189,7 @@
 						<div class="contact_info_item d-flex flex-row align-items-center justify-content-start">
 							<div class="contact_info_image"><img src="images/order.png" alt=""></div>
 							<div class="contact_info_content">
-								<a href=""><div class="contact_info_title">Orders</div></a>
+								<a href="{{url('/all-orders')}}"><div class="contact_info_title">Orders</div></a>
 
 							</div>
 						</div>

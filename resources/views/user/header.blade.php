@@ -26,7 +26,7 @@
                             <form method="POST" action="{{ route('logout') }}">
                                 @csrf
 
-                            <div><div class="user_icon"><img src="images/user.svg" alt=""></div><a href="#">Profile</a></div>
+                            <div><div class="user_icon"><img src="images/user.svg" alt=""></div><a href="{{url('/profile')}}">Profile</a></div>
 
                             <div><a href="route('logout')"
                                 onclick="event.preventDefault();
@@ -113,7 +113,7 @@
                         <div class="wishlist d-flex flex-row align-items-center justify-content-end">
                             <div class="wishlist_icon"><img src="{{ asset('images/heart.png') }}" alt=""></div>
                             <div class="wishlist_content">
-                                <div class="wishlist_text"><a href="#">Wishlist</a></div>
+                                <div class="wishlist_text"><a href="{{url('/all-wishlist')}}">Wishlist</a></div>
                                 <div class="wishlist_count">{{  $wishlists  }}</div>
                             </div>
                         </div>
@@ -134,7 +134,7 @@
                                     <div class="cart_count"><span>{{$totalitem}}</span></div>
                                 </div>
                                 <div class="cart_content">
-                                    <div class="cart_text"><a href="#">Cart</a></div>
+                                    <div class="cart_text"><a href="{{url('/view-cart')}}">Cart</a></div>
 
                                     <div class="cart_price">$10</div>
                                 </div>
