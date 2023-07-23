@@ -49,7 +49,7 @@
 									<div class="d-flex flex-column align-items-center justify-content-center">
 										<div class="arrivals_single_image"><img src="{{ asset('/image/' . $product->image) }}" alt=""></div>
 										<div class="arrivals_single_content">
-											<div class="arrivals_single_category"><a href="#">{{ $product->name }}</a></div>
+											<div class="arrivals_single_category"><b><a style="font-size: 20px;" href="#">{{ $product->name }}</a></b></div>
 											<div class="arrivals_single_name_container clearfix">
 												<div class="arrivals_single_name"><a href="#">{{ $product->category }}</a></div>
                                                 @if ($product->discount_price)
@@ -59,11 +59,11 @@
                                         <div class="arrivals_single_price text-right">{{ $product->price }}</div>
                                         @endif
 											</div>
-											<a href="{{ url('/product-details/'.$product->id) }}" type="submit" class="arrivals_single_button" style="text-align: center; height: 32px;" >Add to Cart</a>
+											<a href="{{ url('/product-details/'.$product->id) }}" type="submit" class="btn btn-info btn-sm arrivals_single_button" style="text-align: center; height: 32px;" >Add to Cart</a>
 										</div>
                                         <form action="{{ url('/wishlist/'.$product->id) }}" method="post">
                                             @csrf
-                                            <button type="submit" class="arrivals_single_button" style="margin-top: 5px;">Add to Wishlist</button>
+                                            <button class="btn btn-info btn-sm" type="submit" class="arrivals_single_button" style="margin-top: 5px;">Add to Wishlist</button>
 
                                         </form>
 										<ul class="arrivals_single_marks product_marks">
