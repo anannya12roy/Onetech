@@ -148,7 +148,7 @@ class UserController extends Controller
         // $routeName = $name;
 
         // $hotdeal = Product::where('hot_deal',1)->get();
-        return view('user.pages.hotdeal_product',compact('categories','products','carts', 'setting', 'wishlists'));
+        return view('user.pages.blackfriday',compact('categories','products','carts', 'setting', 'wishlists'));
     }
 
 }
