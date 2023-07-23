@@ -15,7 +15,7 @@
                                 <th>Discount Price</th>
                                 <th>Image</th>
                                 <th>Status</th>
-                                <th>Hot deal</th>
+                                <th>Black Friday</th>
                                 <th>Action</th>
 
 

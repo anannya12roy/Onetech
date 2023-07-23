@@ -22,19 +22,19 @@
                         <label for=""><b>Description :</b></label>
                         <input type="text" class="form-control" name="description" value="{{ $setting['description'] }}"  placeholder="Write The Description">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group d-none">
                         <label for=""><b>Facebook Link :</b></label>
                         <input type="text" class="form-control" name="facebook_link" value="{{ $setting['facebook_link'] }}"  placeholder="Write The Facebook Link">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group d-none">
                         <label for=""><b>Twitter Link :</b></label>
                         <input type="text" class="form-control" name="twitter_link" value="{{ $setting['twitter_link'] }}"  placeholder="Write The Twitter Link ">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group d-none">
                         <label for=""><b>Instagram Link :</b></label>
                         <input type="text" class="form-control" name="instagram_link" value="{{ $setting['instagram_link'] }}"  placeholder="Write The Instagram Link">
                     </div>
-                    <div class="form-group">
+                    <div class="form-group d-none">
                         <label for=""><b>Youtube Link :</b></label>
                         <input type="text" class="form-control" name="youtube_link" value="{{ $setting['youtube_link'] }}"  placeholder="Write The Youtube Link">
                     </div>

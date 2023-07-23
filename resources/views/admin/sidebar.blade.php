@@ -79,7 +79,7 @@
         </li><li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#sub" aria-expanded="false" aria-controls="ui-basic">
                 <i class="icon-layout menu-icon"></i>
-                <span class="menu-title">Subsscribers</span>
+                <span class="menu-title">Subscribers</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="sub">
@@ -92,13 +92,13 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#hot" aria-expanded="false" aria-controls="ui-basic">
                 <i class="icon-layout menu-icon"></i>
-                <span class="menu-title">Hotdeal Banner</span>
+                <span class="menu-title">Black Friday</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="hot">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{url('/all-hot_deal')}}">View Hot Deal Banner</a></li>
-                    <li class="nav-item"> <a class="nav-link" href="{{url('/hot_deal')}}">Create HotDeal Banner</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{url('/all-hot_deal')}}">Black Friday Banner</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{url('/hot_deal')}}">Create Black Friday Banner</a></li>
 
                 </ul>
             </div>
@@ -121,12 +121,12 @@
         <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#p" aria-expanded="false" aria-controls="ui-basic">
                 <i class="icon-layout menu-icon"></i>
-                <span class="menu-title">Website settings</span>
+                <span class="menu-title">Settings</span>
                 <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="p">
                 <ul class="nav flex-column sub-menu">
-                    <li class="nav-item"> <a class="nav-link" href="{{url('/all-setting')}}">All Setting</a></li>
+                    <li class="nav-item"> <a class="nav-link" href="{{url('/all-setting')}}">All Settings</a></li>
 
 
                 </ul>

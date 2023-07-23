@@ -85,7 +85,7 @@
 
                     </div>
                     <div class="form-group">
-                        <label>Hot Deal</label>
+                        <label>Black Friday</label>
 
                         <select class="form-control" name="hot_deal">
                             <option value="1">Active</option>

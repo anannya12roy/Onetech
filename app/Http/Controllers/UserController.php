@@ -36,7 +36,7 @@ class UserController extends Controller
             $carts = Cart::where('user_id', $users_id )->get();
             $wishlists = Wishlist::where('user_id', $users_id)->count();
         }
-        $products = Product::orderBy('id', 'DESC')->limit(6)->get();
+        $products = Product::orderBy('id', 'DESC')->limit(8)->get();
         $settings = DB::table('settings')->get() ;
         $setting = array();
         foreach ($settings as $key => $value) {
@@ -58,7 +58,7 @@ class UserController extends Controller
     public function frontpage(){
 
         $categories = Category::all();
-       
+
         $hotdeals = Hotdeal::all();
         $hotdeal = Product::where('hot_deal',1)->get();
 
