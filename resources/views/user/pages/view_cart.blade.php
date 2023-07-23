@@ -47,7 +47,7 @@
 
             </tbody>
         </table>
-        <a style="float: right;" class="btn btn-info" href="">Checkout</a>
+        <a style="float: right;" class="btn btn-info" href="{{ url('/shipping-address') }}">Checkout</a>
     </div>
     <br><br><br><br><br><br>
 @endsection
