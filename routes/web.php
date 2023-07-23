@@ -123,7 +123,7 @@ Route::get('/home', [UserController::class, 'home']);
 
 Route::get('/productbycat/{name}', [AllproductController::class, 'productbycat'])->name('hello');
 Route::post('/add_cart/{id}', [\App\Http\Controllers\WebControllers\CartController::class, 'add_cart']);
-Route::get('/hotdeal_shop/{name}', [\App\Http\Controllers\UserController::class, 'hotdeal']);
+Route::get('/black_friday/{name}', [\App\Http\Controllers\UserController::class, 'hotdeal']);
 Route::get('/product-details/{id}', [\App\Http\Controllers\WebControllers\ProductdetailsController::class, 'viewdetails']);
 Route::get('/delete_cart/{id}', [\App\Http\Controllers\WebControllers\CartController::class, 'delete_cart']);
 Route::post('/subscribe-us', [SubscribeController::class, 'subscribe'])->name('subscribe.us');
@@ -132,6 +132,7 @@ Route::post('/check-subscribe-mail', [SubscribeController::class, 'checkMail'])-
 Route::post('/wishlist/{id}', [WishlistController::class, 'add_wishlist']);
 Route::get('/all-wishlist', [WishlistController::class, 'all_wishlist']);
 Route::get('/delete_wishlist/{id}', [WishlistController::class, 'wishlist_delete']);
+
 
 //profilee
     //
