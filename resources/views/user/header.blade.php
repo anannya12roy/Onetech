@@ -135,8 +135,17 @@
                                 </div>
                                 <div class="cart_content">
                                     <div class="cart_text"><a href="{{url('/view-cart')}}">Cart</a></div>
-
-                                    <div class="cart_price">$10</div>
+                                    <?php
+                                    $totalitem = 0;
+                                    $total_cart_price = 0;
+                                    ?>
+                                @foreach ($carts as $cart)
+                                        <?php
+                                        $totalitem =$totalitem +  $cart->quantity;
+                                        $total_cart_price = $total_cart_price + $cart->total_price;
+                                        ?>
+                                @endforeach
+                                    <div class="cart_price">${{ $total_cart_price}}</div>
                                 </div>
                             </div>
                         </div>

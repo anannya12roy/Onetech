@@ -35,7 +35,7 @@
                                 <div class="product_text"><p>{!! $products->description !!} </p></div>
 
                                     @if ($products->discount_price)
-                                        <div class="product_text" name="discount_price"><p><b>Price:</b> &#2547; {{ $products->discount_price }}
+                                        <div class="product_text" name="discount_price"><p><b>Price:</b> &#2547; {{ $products->discount_price }} &nbsp
                                         <del
                                             class="product-old-price">&#2547;{{ $products->price }}</del></p></div>
                                     @else
@@ -62,23 +62,21 @@
                                             </select>
                                         </label>
                                     </label>
-
-                            </div>
-                            <div class="button_container">
-                                <div class="add-to-cart">
-                                    <div class="product_quantity clearfix">
-                                        <span>Quantity: </span>
-                                        <input id="quantity_input" type="text" pattern="[0-9]*"  name="quantity" value="1">
-                                        <div class="quantity_buttons">
-                                            <div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fas fa-chevron-up"></i></div>
-                                            <div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fas fa-chevron-down"></i></div>
+                                    <div class="add-to-cart">
+                                        <div class="product_quantity clearfix">
+                                            <span>Quantity:<br></span>
+                                            <input id="quantity_input" type="text" pattern="[0-9]*"  name="quantity" value="1">
+                                            <div class="quantity_buttons">
+                                                <div id="quantity_inc_button" class="quantity_inc quantity_control"><i class="fas fa-chevron-up"></i></div>
+                                                <div id="quantity_dec_button" class="quantity_dec quantity_control"><i class="fas fa-chevron-down"></i></div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div><br>
-                                <button type="submit" class="button cart_button">Add to Cart</button></form>
+                                    
+                                    <button type="submit" class="arrivals_single_button" style="margin-top: 10px; width: 140px;">Add to Cart</button></form>
                                 <form action="{{ url('/wishlist/'.$products->id) }}" method="post">
                                     @csrf
-                                    <button type="submit" class="button cart_button">Add to Wishlist</button>
+                                    <button type="submit" class="arrivals_single_button"style="margin-top: 10px; width: 140px;" >Add to Wishlist</button>
                                 </form>
 
                             </div>

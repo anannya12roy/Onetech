@@ -16,6 +16,7 @@
         <table style="margin-top: 5%;" class="table table-bordered">
             <thead>
             <tr>
+                <th></th>
                 <th scope="col">Product Name</th>
                 <th scope="col">Size</th>
                 <th scope="col">Color</th>
@@ -30,6 +31,7 @@
             @foreach ($carts as $cart)
 
                 <tr>
+                    <th><a href="{{url('/delete_cart/'.$cart->id)}}" onclick=" confirmation(event)" style="height:25%; margin-left: 15px;  border-style: none;"  class="delete"><i  class="fa fa-times"></i></a>
                     <td>{{  $cart->product_name}}</td>
                     <td>Size: {{  $cart->size}}</td>
                     <td>Color: {{  $cart->color}}</td>
@@ -47,4 +49,5 @@
         </table>
         <a style="float: right;" class="btn btn-info" href="">Checkout</a>
     </div>
+    <br><br><br><br><br><br>
 @endsection

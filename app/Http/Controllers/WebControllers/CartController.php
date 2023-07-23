@@ -103,7 +103,7 @@ class CartController extends Controller
     public function delete_cart($id){
         $cart_delete = Cart::find($id);
         $cart_delete->delete();
-        Alert::warning('Cart Delated');
+       
         return redirect()->back();
 
     }
