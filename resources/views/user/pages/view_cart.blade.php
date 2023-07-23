@@ -45,5 +45,6 @@
 
             </tbody>
         </table>
+        <a style="float: right;" class="btn btn-info" href="">Checkout</a>
     </div>
 @endsection

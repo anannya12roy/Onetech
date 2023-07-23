@@ -1,7 +1,7 @@
 @extends('user.master')
 
 @section('user.content')
-    @include('user.nav')
+    
 
       <!-- inner page section -->
 
@@ -11,8 +11,8 @@
           <section class="why_section layout_padding">
             <div class="container">
 
-               <div class="">
-                  <div class="col col-lg-6 row row-lg-8">
+               <div class="row">
+                  <div class="col col-lg-6">
                      <section class="inner_page_head">
                         <div class="container_fuild">
                            <div class="row">
@@ -56,7 +56,7 @@
                   </div>
 
 
-                  <div class="col col-lg-6 ">
+                  <div class="col col-lg-6">
                      <section class="inner_page_head">
                         <div class="container_fuild">
                            <div class="row">
@@ -80,7 +80,7 @@
                               <input type="text" id="ship_district" placeholder="Enter receivers district" name="district" required style="width: 95%;margin-bottom:5px;padding:10px 15px; border-radius: 15px; border:1px solid black;"/>
                               <input type="text" id="ship_zip" placeholder="Enter zip code" name="zip" required style="width: 95%;margin-bottom:5px;padding:10px 15px; border-radius: 15px; border:1px solid black;"/>
 
-                              <button class="btn" style="float:right; color: rgb(255, 255, 255); background:#dc3545; margin-top: 5px;" type="submit" > Submit <i class="fa-solid fa-arrow-right"></i> </button>
+                              <button class="btn" style="float:right; color: rgb(255, 255, 255); background:#3d40db; margin-top: 5px;" type="submit" >Submit </button>
                            </fieldset>
                         </form>
                      </div>
