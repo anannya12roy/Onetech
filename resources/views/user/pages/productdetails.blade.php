@@ -35,11 +35,11 @@
                                 <div class="product_text"><p>{!! $products->description !!} </p></div>
 
                                     @if ($products->discount_price)
-                                        <div class="product_text" name="discount_price"><p><b>Price:</b> {{ $products->discount_price }}</p></div>
+                                        <div class="product_text" name="discount_price"><p><b>Price:</b> &#2547; {{ $products->discount_price }}
                                         <del
-                                            class="product-old-price">&#2547;{{ $products->price }}</del>
+                                            class="product-old-price">&#2547;{{ $products->price }}</del></p></div>
                                     @else
-                                        <div class="product_text" name="price"><p><b>Price : </b>{{ $products->price }}</p></div>
+                                        <div class="product_text" name="price"><p><b>Price : </b>&#2547;{{ $products->price }}</p></div>
                                     @endif
 
                                     <label>Size:
@@ -75,7 +75,7 @@
                                         </div>
                                     </div>
                                 </div><br>
-                                <button type="submit" class="button cart_button">Add to Cart</button></form><br><br>
+                                <button type="submit" class="button cart_button">Add to Cart</button></form>
                                 <form action="{{ url('/wishlist/'.$products->id) }}" method="post">
                                     @csrf
                                     <button type="submit" class="button cart_button">Add to Wishlist</button>
