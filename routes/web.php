@@ -127,3 +127,7 @@ Route::get('/product-details/{id}', [\App\Http\Controllers\WebControllers\Produc
 Route::get('/delete_cart/{id}', [\App\Http\Controllers\WebControllers\CartController::class, 'delete_cart']);
 Route::post('/subscribe-us', [SubscribeController::class, 'subscribe'])->name('subscribe.us');
 Route::post('/check-subscribe-mail', [SubscribeController::class, 'checkMail'])->name('subscribe.check');
+
+Route::post('/wishlist/{id}', [WishlistController::class, 'add_wishlist']);
+Route::get('/all-wishlist', [WishlistController::class, 'all_wishlist']);
+Route::get('/delete_wishlist/{id}', [WishlistController::class, 'wishlist_delete']);
