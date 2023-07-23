@@ -26,11 +26,12 @@
         <!-- Header -->
 
         @include('user.header')
+        
         <!-- Banner -->
 
         @yield('user.content')
 
-        @include('user.newsletter')
+        {{-- @include('user.newsletter') --}}
         <!-- Footer -->
         @include('user.footer')
         <!-- Copyright -->

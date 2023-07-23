@@ -1,6 +1,6 @@
 <?php
 use App\Http\Controllers\OrderController;
-use App\Http\Controllers\ProfileController;
+// use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
@@ -11,6 +11,7 @@ use App\Http\Controllers\SubscribeController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\WebControllers\PageController as WPageController;
 use App\Http\Controllers\WebControllers\CartController;
+use App\Http\Controllers\WebControllers\ProfileController;
 use App\Http\Controllers\WebControllers\WishlistController;
 use App\Http\Controllers\WebControllers\ShippingController;
 use App\Http\Controllers\ProductController;
@@ -131,3 +132,12 @@ Route::post('/check-subscribe-mail', [SubscribeController::class, 'checkMail'])-
 Route::post('/wishlist/{id}', [WishlistController::class, 'add_wishlist']);
 Route::get('/all-wishlist', [WishlistController::class, 'all_wishlist']);
 Route::get('/delete_wishlist/{id}', [WishlistController::class, 'wishlist_delete']);
+
+//profilee
+    //
+    // Route::post('/profile-update', [\App\Http\Controllers\WebControllers\ProfileController::class, 'profile_update']);
+    Route::get('/profile', [\App\Http\Controllers\WebControllers\ProfileController::class, 'index']);
+    // Route::get('/billing-address', [\App\Http\Controllers\WebControllers\ProfileController::class, 'bill_add']);
+    // Route::post('/billing-address-update', [\App\Http\Controllers\WebControllers\ProfileController::class, 'billaddress_update']);
+    // Route::get('/all-orders', [\App\Http\Controllers\WebControllers\ProfileController::class, 'orders']);
+    Route::get('/view-cart', [CartController::class, 'view_cart']);

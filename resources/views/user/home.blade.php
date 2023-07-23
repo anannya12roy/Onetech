@@ -1,46 +1,7 @@
 @extends('user.master')
 @section('user.content')
-<nav class="main_nav">
-    <div class="container">
-        <div class="row">
-            <div class="col">
+@include('user.nav')
 
-                <div class="main_nav_content d-flex flex-row">
-
-                    <!-- Categories Menu -->
-
-                    <div class="cat_menu_container">
-                        <div class="cat_menu_title d-flex flex-row align-items-center justify-content-start">
-                            <div class="cat_burger"><span></span><span></span><span></span></div>
-                            <div class="cat_menu_text">categories</div>
-                        </div>
-                        @foreach ($categories as $category)
-                        <ul class="cat_menu">
-                            <li><a href="{{url('/productbycat/'.$category->name)}}">{{$category->name}} <i class="fas fa-chevron-right ml-auto"></i></a></li>
-                        </ul>
-                        @endforeach
-                    </div>
-
-                    <!-- Main Nav Menu -->
-
-
-
-                    <!-- Menu Trigger -->
-
-                    <div class="menu_trigger_container ml-auto">
-                        <div class="menu_trigger d-flex flex-row align-items-center justify-content-end">
-                            <div class="menu_burger">
-                                <div class="menu_trigger_text">menu</div>
-                                <div class="cat_burger menu_burger_inner"><span></span><span></span><span></span></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </div>
-</nav>
 <div class="banner">
     <div class="banner_background" style="background-image:url(images/banner_background.jpg)"></div>
     <div class="container fill_height">
