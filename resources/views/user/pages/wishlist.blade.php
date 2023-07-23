@@ -8,6 +8,7 @@
     <table style="margin-top: 5%;" class="table table-bordered">
         <thead>
           <tr>
+              <th></th>
             <th scope="col">Product Name</th>
             <th scope="col">Image</th>
             <th scope="col">Price</th>
@@ -18,7 +19,7 @@
 
 @foreach ($wishlistData as $data)
           <tr>
-            <th><a href="{{url('/delete_wishlist/'.$data->id)}}" onclick=" confirmation(event)" style="height:25%; margin-left: 15px;  border-style: none;"  class="delete"><i  class="fa fa-close"></i></a>
+            <th><a href="{{url('/delete_wishlist/'.$data->id)}}" onclick=" confirmation(event)" style="height:25%; margin-left: 15px;  border-style: none;"  class="delete"><i  class="fa fa-times"></i></a>
             </th>
             <th scope="row">{{ $data->product->name }}
              <br>
@@ -30,8 +31,6 @@
                 src="{{ asset('/image/' .  $data->product->image) }}"></td>
             <td>{{ $data->product->price }}</td>
             <td>{{ $data->product->discount_price }}</td>
-
-
           </tr>
 
           @endforeach

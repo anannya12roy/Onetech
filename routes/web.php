@@ -136,8 +136,10 @@ Route::get('/delete_wishlist/{id}', [WishlistController::class, 'wishlist_delete
 //profilee
     //
     // Route::post('/profile-update', [\App\Http\Controllers\WebControllers\ProfileController::class, 'profile_update']);
-    Route::get('/profile', [\App\Http\Controllers\WebControllers\ProfileController::class, 'index']);
+Route::post('/profile-update', [\App\Http\Controllers\WebControllers\ProfileController::class, 'profile_update']);
+Route::get('/profile', [\App\Http\Controllers\WebControllers\ProfileController::class, 'index']);
     // Route::get('/billing-address', [\App\Http\Controllers\WebControllers\ProfileController::class, 'bill_add']);
     // Route::post('/billing-address-update', [\App\Http\Controllers\WebControllers\ProfileController::class, 'billaddress_update']);
     Route::get('/all-orders', [\App\Http\Controllers\WebControllers\ProfileController::class, 'orders']);
     Route::get('/view-cart', [CartController::class, 'view_cart']);
+

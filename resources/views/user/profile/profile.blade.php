@@ -209,14 +209,15 @@
 					<div class="contact_form_container">
 						<div class="contact_form_title">User Information</div>
 
-						<form action="#" id="contact_form">
+						<form action="{{url('/profile-update')}}" method="post"  id="contact_form">
+                            @csrf
 							<div class="contact_form_inputs d-flex flex-md-row flex-column justify-content-between align-items-between">
-								<input type="text" id="contact_form_name" class="contact_form_name input_field" placeholder="Your name" required="required" data-error="Name is required.">
-								<input type="text" id="contact_form_email" class="contact_form_email input_field" placeholder="Your email" required="required" data-error="Email is required.">
-								<input type="text" id="contact_form_phone" class="contact_form_phone input_field" placeholder="Your phone number">
+								<input type="text" id="contact_form_name" name="name" class="contact_form_name input_field" placeholder="Your name" value="{{Auth::user()->name}}" required="required" data-error="Name is required.">
+								<input type="email" id="contact_form_email" class="contact_form_email input_field" name="email" placeholder="Your email" value="{{Auth::user()->email}}" required="required" data-error="Email is required.">
+								<input type="text" id="contact_form_phone" class="contact_form_phone input_field" name="phone" value="{{Auth::user()->phone}}" placeholder="Your phone number">
 							</div>
 							<div class="contact_form_text">
-								<textarea id="contact_form_message" class="text_field contact_form_message" name="message" rows="4" placeholder="Address" required="required" data-error="Please, write us a message."></textarea>
+								<textarea id="contact_form_message" class="text_field contact_form_message" name="address" rows="4" placeholder="Address" value="{{Auth::user()->address}}" required="required" data-error="Please, write us ur address.">{{Auth::user()->address}}</textarea>
 							</div>
 							<div class="contact_form_button">
 								<button type="submit" class="button contact_submit_button">Update</button>

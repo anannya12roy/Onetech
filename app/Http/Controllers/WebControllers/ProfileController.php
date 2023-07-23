@@ -16,6 +16,7 @@ class ProfileController extends Controller
 {
     public function index()
     {
+
         if(Auth::user()){
             $user_id = Auth::user()->id;
             $profile = User::where('id', $user_id )->first();
@@ -38,11 +39,13 @@ class ProfileController extends Controller
             'setting' => $setting ,
         ];
 
+
         return view('user.profile.profile',compact('setting', 'carts', 'categories', 'wishlists'));
     }
 
     public function profile_update(Request $request)
     {
+
         $user_id = Auth::user()->id;
         $user=User::where('id',$user_id)->update([
             'name' => $request->name,
