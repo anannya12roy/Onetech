@@ -93,7 +93,7 @@
 
         </div>
         <div class="form-group">
-            <label>Hot deal</label>
+            <label>Black Friday</label>
             <select class="form-control" name="hot_deal">
                 <option value="1" {{$product->hot_deal=='1' ? 'selected' : ''}}>Active</option>
                 <option value="0" {{$product->hot_deal=='0' ? 'selected' : ''}}>Inactive</option>

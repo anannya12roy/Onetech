@@ -30,7 +30,7 @@
               <div class="card card-tale">
                 <div class="card-body">
                   <p class="mb-4">Number of Categories</p>
-                  <p class="fs-30 mb-2">4006</p>
+                  <p class="fs-30 mb-2">{{ $totalcategory }}</p>
                   <p>10.00% (30 days)</p>
                 </div>
               </div>
@@ -39,7 +39,7 @@
               <div class="card card-dark-blue">
                 <div class="card-body">
                   <p class="mb-4">Number of Colors</p>
-                  <p class="fs-30 mb-2">61344</p>
+                  <p class="fs-30 mb-2">{{ $totalcolor }}</p>
                   <p>22.00% (30 days)</p>
                 </div>
               </div>
@@ -50,7 +50,7 @@
               <div class="card card-light-blue">
                 <div class="card-body">
                   <p class="mb-4">Number of Users</p>
-                  <p class="fs-30 mb-2">34040</p>
+                  <p class="fs-30 mb-2">{{ $totalusers }}</p>
                   <p>2.00% (30 days)</p>
                 </div>
               </div>
@@ -59,7 +59,7 @@
               <div class="card card-light-danger">
                 <div class="card-body">
                   <p class="mb-4">Number of Products</p>
-                  <p class="fs-30 mb-2">47033</p>
+                  <p class="fs-30 mb-2">{{ $totalproducts }}</p>
                   <p>0.22% (30 days)</p>
                 </div>
               </div>
