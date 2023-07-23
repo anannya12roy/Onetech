@@ -15,7 +15,7 @@
 
                         <ul class="cat_menu">
                             @foreach ($categories as $category)
-                            <li><a href="#">{{$category->name}} <i class="fas fa-chevron-right ml-auto"></i></a></li>
+                            <li><a href="{{url('/productbycat/'.$category->name)}}">{{$category->name}} <i class="fas fa-chevron-right ml-auto"></i></a></li>
                             @endforeach
                         </ul>
                     </div>
