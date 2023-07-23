@@ -149,3 +149,4 @@ Route::get('/profile', [\App\Http\Controllers\WebControllers\ProfileController::
 
     Route::get('/checkout', [OrderController::class, 'user_all_order']);
     Route::get('/cod-order', [OrderController::class, 'cod_order']);
+    Route::get('/order-cancel/{id}', [OrderController::class, 'cancelbyuser']);
