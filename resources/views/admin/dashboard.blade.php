@@ -13,7 +13,7 @@
              <div class="justify-content-end d-flex">
               <div class="dropdown flex-md-grow-1 flex-xl-grow-0">
                 <button class="btn btn-sm btn-light bg-white " type="button" id="dropdownMenuDate2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                
+                 <i class="mdi mdi-calendar"></i> {{ now()->format('Y-m-d') }}
                 </button>
 
               </div>
@@ -31,7 +31,7 @@
                 <div class="card-body">
                   <p class="mb-4">Number of Categories</p>
                   <p class="fs-30 mb-2">{{ $totalcategory }}</p>
-                 
+                  
                 </div>
               </div>
             </div>
@@ -40,7 +40,7 @@
                 <div class="card-body">
                   <p class="mb-4">Number of Colors</p>
                   <p class="fs-30 mb-2">{{ $totalcolor }}</p>
-                  
+                 
                 </div>
               </div>
             </div>
@@ -51,14 +51,14 @@
                 <div class="card-body">
                   <p class="mb-4">Number of Users</p>
                   <p class="fs-30 mb-2">{{ $totalusers }}</p>
-                
+                  
                 </div>
               </div>
             </div>
             <div class="col-md-6 stretch-card transparent" style="text-align: center">
               <div class="card card-light-danger">
                 <div class="card-body">
-                  <p class="mb-4">Number of Products</p>
+                  <p class="mb-4">Number of Active Products</p>
                   <p class="fs-30 mb-2">{{ $totalproducts }}</p>
                  
                 </div>
