@@ -19,7 +19,7 @@
                     <div class="banner_content">
                         <h1 class="banner_text">{{$hotdeal->frst_desp}}</h1>
                         <div class="banner_product_name">{{$hotdeal->scnd_desp}}</div>
-                        <div class="button banner_button"><a href="{{url('/black_friday/{name}')}}">Shop Now</a></div>
+                        <div class="button banner_button"><a href="{{url('/black_friday/{name}')}}">Offer product</a></div>
                     </div>
                 </div>
             </div>
@@ -122,8 +122,6 @@
 						</div>
 						<div class="row">
                             @foreach ($products as $product)
-
-
                             <div class="col-lg-3">
 								<div class="arrivals_single clearfix">
 									<div class="d-flex flex-column align-items-center justify-content-center">
@@ -229,36 +227,5 @@
 
 
 
-    <!-- Brands -->
-
-    <div class="brands">
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <div class="brands_slider_container">
-
-                        <!-- Brands Slider -->
-
-                        <div class="owl-carousel owl-theme brands_slider">
-
-                            <div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_1.jpg" alt=""></div></div>
-                            <div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_2.jpg" alt=""></div></div>
-                            <div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_3.jpg" alt=""></div></div>
-                            <div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_4.jpg" alt=""></div></div>
-                            <div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_5.jpg" alt=""></div></div>
-                            <div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_6.jpg" alt=""></div></div>
-                            <div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_7.jpg" alt=""></div></div>
-                            <div class="owl-item"><div class="brands_item d-flex flex-column justify-content-center"><img src="images/brands_8.jpg" alt=""></div></div>
-
-                        </div>
-
-                        <!-- Brands Slider Navigation -->
-                        <div class="brands_nav brands_prev"><i class="fas fa-chevron-left"></i></div>
-                        <div class="brands_nav brands_next"><i class="fas fa-chevron-right"></i></div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 @endsection

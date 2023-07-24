@@ -36,7 +36,7 @@ class UserController extends Controller
             $carts = Cart::where('user_id', $users_id )->get();
             $wishlists = Wishlist::where('user_id', $users_id)->count();
         }
-        $products = Product::orderBy('id', 'DESC')->limit(8)->get();
+        $products = Product::where('status',1)->orderBy('id', 'DESC')->limit(8)->get();
         $settings = DB::table('settings')->get() ;
         $setting = array();
         foreach ($settings as $key => $value) {
@@ -72,11 +72,11 @@ class UserController extends Controller
             $wishlists = Wishlist::where('user_id', $users_id)->count();
 
         }
-
-        $products = DB::table('products')
-            ->orderBy('products.id', 'DESC')
-            // ->leftJoin('categories', 'products.category', '=', 'categories.name')
-            ->get();
+        $products = Product::where('status',1)->orderBy('id', 'DESC')->limit(8)->get();
+        // $products = DB::table('products')
+        //     ->orderBy('products.id', 'DESC')
+        //     // ->leftJoin('categories', 'products.category', '=', 'categories.name')
+        //     ->get();
 
         //
         // if(Auth::user()){

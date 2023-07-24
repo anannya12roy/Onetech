@@ -35,7 +35,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 mb-4 stretch-card transparent" style="text-align: center">>
+            <div class="col-md-6 mb-4 stretch-card transparent" style="text-align: center">
               <div class="card card-dark-blue">
                 <div class="card-body">
                   <p class="mb-4">Number of Colors</p>
@@ -46,7 +46,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent" style="text-align: center">>
+            <div class="col-md-6 mb-4 mb-lg-0 stretch-card transparent" style="text-align: center">
               <div class="card card-light-blue">
                 <div class="card-body">
                   <p class="mb-4">Number of Users</p>
@@ -55,7 +55,7 @@
                 </div>
               </div>
             </div>
-            <div class="col-md-6 stretch-card transparent" style="text-align: center">>
+            <div class="col-md-6 stretch-card transparent" style="text-align: center">
               <div class="card card-light-danger">
                 <div class="card-body">
                   <p class="mb-4">Number of Products</p>
