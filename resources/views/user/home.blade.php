@@ -127,7 +127,7 @@
 									<div class="d-flex flex-column align-items-center justify-content-center">
 										<div class="arrivals_single_image"><img src="{{ asset('/image/' . $product->image) }}" alt=""></div>
 										<div class="arrivals_single_content">
-											<div  class="arrivals_single_category"><b><a style="font-size: 20px;" href="#">{{ $product->name }}</a></b></div>
+											<div  class="arrivals_single_category"><b><a style="font-size: 20px;" href="">{{ $product->name }}</a></b></div>
 											<div class="arrivals_single_name_container clearfix">
 												<div class="arrivals_single_name"><a href="#">{{ $product->category }}</a></div>
                                                 @if ($product->discount_price)
@@ -227,5 +227,5 @@
 
 
 
-    
+
 @endsection
